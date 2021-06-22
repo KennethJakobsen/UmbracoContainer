@@ -33,6 +33,7 @@
             <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
             <CopyToPublishDirectory>Always</CopyToPublishDirectory>
         </None>
+        <None Remove="umbraco\Data\TEMP\TypesCache\umbraco-types.Kenneths-MacBook-Pro.list" />
     </ItemGroup>
     <ItemGroup>
         <Content Remove="umbraco\Data\**" />
@@ -42,6 +43,11 @@
     </ItemGroup>
 
     <!--Set this to true ModelsBuilder mode is not PureLive -->
+    <ItemGroup>
+      <ProjectReference Include="..\Website.Core\Website.Core.csproj">
+        <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+      </ProjectReference>
+    </ItemGroup>
     <PropertyGroup>
         <RazorCompileOnBuild>false</RazorCompileOnBuild>
     </PropertyGroup>

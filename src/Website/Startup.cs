@@ -64,10 +64,8 @@ namespace Website
         /// </summary>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
+            
                 app.UseDeveloperExceptionPage();
-            }
 
             app.UseUmbraco()
                 .WithMiddleware(u =>

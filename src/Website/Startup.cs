@@ -6,9 +6,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 using Microsoft.Extensions.Hosting;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.DataProtection;
 using System.IO;
 
+=======
+using Microsoft.AspNetCore.DataProtection;
+
+>>>>>>> 0093f6204bfb39f2b32c911c79e5fe222ae0cd5b
 namespace Website
 {
     public class Startup
@@ -46,6 +51,7 @@ namespace Website
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDataProtection().PersistKeysToFileSystem(new System.IO.DirectoryInfo("./keys"));
 #pragma warning disable IDE0022 // Use expression body for methods
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()             
@@ -53,7 +59,7 @@ namespace Website
                 .AddComposers()
                 .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
-            services.AddDataProtection().PersistKeysToFileSystem(new System.IO.DirectoryInfo("./keys"));
+            
             
         }
 

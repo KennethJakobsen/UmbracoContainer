@@ -6,14 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 using Microsoft.Extensions.Hosting;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.DataProtection;
 using System.IO;
 
-=======
-using Microsoft.AspNetCore.DataProtection;
 
->>>>>>> 0093f6204bfb39f2b32c911c79e5fe222ae0cd5b
 namespace Website
 {
     public class Startup

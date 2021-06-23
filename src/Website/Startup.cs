@@ -40,6 +40,7 @@ namespace Website
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDataProtection().PersistKeysToFileSystem(new System.IO.DirectoryInfo("./keys"));
 #pragma warning disable IDE0022 // Use expression body for methods
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()             
@@ -47,7 +48,7 @@ namespace Website
                 .AddComposers()
                 .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
-            services.AddDataProtection().PersistKeysToFileSystem(new System.IO.DirectoryInfo("./keys"));
+            
             
         }
 

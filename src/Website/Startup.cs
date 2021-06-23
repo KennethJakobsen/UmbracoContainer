@@ -7,6 +7,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.DataProtection;
+using System.IO;
 
 namespace Website
 {
@@ -25,6 +26,11 @@ namespace Website
         /// </remarks>
         public Startup(IWebHostEnvironment webHostEnvironment, IConfiguration config)
         {
+            if (Directory.Exists("/data"))
+            {
+                webHostEnvironment.ContentRootPath = "/data";
+                webHostEnvironment.WebRootPath = "/data/wwwroot";
+            }
             _env = webHostEnvironment ?? throw new ArgumentNullException(nameof(webHostEnvironment));
             _config = config ?? throw new ArgumentNullException(nameof(config));
         }

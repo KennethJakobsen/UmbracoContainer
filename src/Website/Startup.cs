@@ -29,8 +29,8 @@ namespace Website
         {
             if (Directory.Exists("/data"))
             {
-                webHostEnvironment.ContentRootPath = "/data";
-                webHostEnvironment.WebRootPath = "/data/wwwroot";
+                webHostEnvironment.ContentRootPath = "/data/app";
+                webHostEnvironment.WebRootPath = "/data/app/wwwroot";
             }
             _env = webHostEnvironment ?? throw new ArgumentNullException(nameof(webHostEnvironment));
             _config = config ?? throw new ArgumentNullException(nameof(config));

@@ -43,7 +43,7 @@ namespace Website
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDataProtection().PersistKeysToFileSystem(new System.IO.DirectoryInfo("./keys"));
+            services.AddDataProtection().PersistKeysToFileSystem(new System.IO.DirectoryInfo("/data/keys"));
 #pragma warning disable IDE0022 // Use expression body for methods
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()             
